@@ -43,3 +43,9 @@ select {
 .generate-btn:hover {
   background-color: #4338ca;
 }
+
+.generate-btn:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
