@@ -15,6 +15,8 @@ app.get("/", (req, res) => {
 
 // Video generation endpoint (placeholder)
 app.post("/generate-video", (req, res) => {
+  console.log("Received request at /generate-video");
+  console.log("Request body:", req.body);
   const { prompt, style, duration } = req.body;
 
   res.json({
