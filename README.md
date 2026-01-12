@@ -1,9 +1,7 @@
 ## Prompt2Vdo
--Prompt2Vdo is a simple **AI text to video prototype** that demonstrates how a frontend application can send structured video-generation requests to a backend service and display the response in real time.
+- Prompt2Vdo is a simple **AI text to video prototype** that demonstrates how a frontend application can send structured video-generation requests to a backend service and display the response in real time.
 
--This project focuses on **end to end flow**, clean structure, and deployment readiness rather than actual AI video generation.
-
----
+- This project focuses on **end to end flow**, clean structure, and deployment readiness rather than actual AI video generation.
 
 ## Features
 - Text prompt input for video description
@@ -12,8 +10,6 @@
 - Backend API integration
 - Loading state and response preview
 - Deployed frontend and backend
-
----
 
 ## Project Structure
 ```text
