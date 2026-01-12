@@ -4,20 +4,21 @@ require("dotenv").config();
 
 const app = express();
 
-// Middlewares
 app.use(cors());
 app.use(express.json());
 
-// Test route
 app.get("/", (req, res) => {
   res.send("Prompt2Vid backend running");
 });
 
-// Video generation endpoint (placeholder)
 app.post("/generate-video", (req, res) => {
   console.log("Received request at /generate-video");
   console.log("Request body:", req.body);
   const { prompt, style, duration } = req.body;
+
+  if (!prompt) {
+    return res.status(400).json({ error: "Prompt is required" });
+  }
 
   res.json({
     message: "Video generation request received",
@@ -25,7 +26,7 @@ app.post("/generate-video", (req, res) => {
   });
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
