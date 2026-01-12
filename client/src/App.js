@@ -8,17 +8,13 @@ function App() {
   const [responseData, setResponseData] = useState(null);
   const [loading, setLoading] = useState(false);
 
-
-
   const handleGenerate = async () => {
   if (!prompt.trim()) {
     alert("Please enter a prompt");
     return;
   }
-
   setLoading(true);
   setResponseData(null);
-
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
   try {
@@ -34,11 +30,12 @@ function App() {
       }),
     });
 
+    if (!response.ok) {
+        throw new Error("Backend error");
+      }
+
     const data = await response.json();
     setResponseData(data);
-
-
-    alert("Request sent to backend successfully!");
   } catch (error) {
     console.error("Error connecting to backend:", error);
     alert("Failed to connect to backend");
@@ -47,63 +44,64 @@ function App() {
   }
 };
 
-
   return (
-    <div className="container">
-      <h1>Prompt2Vid</h1>
-      <p className="subtitle">AI Text to Video Generator</p>
+  <div className="app">
+    {/* Header */}
+    <header className="topbar">
+      <h1>Prompt2Vdo</h1>
+      <span>Text → Video Tool</span>
+    </header>
 
-      <textarea
-        className="prompt-input"
-        placeholder="Describe the video you want..."
-        value={prompt}
-        onChange={(e) => setPrompt(e.target.value)}
-      />
+    {/* Main Content */}
+    <div className="main-page">
+      {/* Left Side Panel */}
+      <div className="left-panel">
+        <textarea
+          className="prompt-box"
+          placeholder="Describe the video you want to generate..."
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+        />
+        <div className="controls-row">
+          <select value={style} onChange={(e) => setStyle(e.target.value)}>
+            <option value="cinematic">Cinematic</option>
+            <option value="animation">Animation</option>
+            <option value="realistic">Realistic</option>
+          </select>
 
-      <div className="controls">
-        <select value={style} onChange={(e) => setStyle(e.target.value)}>
-          <option value="cinematic">Cinematic</option>
-          <option value="animation">Animation</option>
-          <option value="realistic">Realistic</option>
-        </select>
+          <select value={duration} onChange={(e) => setDuration(e.target.value)}>
+            <option value={3}>3 sec</option>
+            <option value={5}>5 sec</option>
+            <option value={10}>10 sec</option>
+          </select>
 
-        <select
-          value={duration}
-          onChange={(e) => setDuration(e.target.value)}
-        >
-          <option value={3}>3 seconds</option>
-          <option value={5}>5 seconds</option>
-          <option value={10}>10 seconds</option>
-        </select>
+          <button
+            className="generate-btn"
+            onClick={handleGenerate}
+            disabled={loading}
+          >
+            {loading ? "Video Generating..." : "Generate Video"}
+          </button>
+        </div>
       </div>
 
-      <button
-          className="generate-btn"
-          onClick={handleGenerate}
-          disabled={loading}
-      >
-      {loading ? "Generating..." : "Generate Video"}
-      </button>
-
-
-      {responseData && (
-        <div style={{ marginTop: "20px", textAlign: "left" }}>
-          <h3>Backend Response</h3>
-          <pre>{JSON.stringify(responseData, null, 2)}</pre>
-        </div>
-      )}
-
-      {/* {responseData && (
-        <div style={{ marginTop: "20px" }}>
-          <h3>Generated Video (Preview)</h3>
-          <video width="100%" controls>
-          <source src="/sample.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-    )} */}
+      {/* Right Side Panel */}
+      <div className="right-panel">
+        {!responseData && (
+          <div className="placeholder">
+            <p>🎬 Video preview will appear here</p>
+          </div>
+        )}
+        {responseData && (
+          <div className="output">
+            <h3>Generated Video</h3>
+            <pre>{JSON.stringify(responseData, null, 2)}</pre>
+          </div>
+        )}
+      </div>
     </div>
-  );
+  </div>
+);
 }
 
 export default App;
