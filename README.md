@@ -26,24 +26,24 @@ prompt2vdo/
 ## Tech Stack
 
 ### Frontend
-React (Create React App)
-JavaScript
-CSS
+- React (Create React App)
+- JavaScript
+- CSS
 
 ### Backend
-Node.js
-Express
-CORS
-dotenv
+- Node.js
+- Express
+- CORS
+- dotenv
 
 ## Deployment
-Frontend: Vercel
-Backend: Render
+- Frontend: Vercel
+- Backend: Render
 
 ## Running the Project Locally
 ### 1. Clone the repository
-```bash
 git clone https://github.com/Sunit2003-mallick/prompt2vdo.git
+```bash
 cd prompt2vdo
 ```
 
@@ -66,15 +66,15 @@ Frontend runs on:
 http://localhost:3000
 
 ## Live Deployment
-Frontend (Vercel):
+- Frontend (Vercel):
 https://prompt2vdo.vercel.app
-Backend (Render):
+- Backend (Render):
 https://prompt2vdo-backend.onrender.com
 
 ## Notes
--This project is a prototype focused on frontend–backend integration.
--Actual AI video generation is not implemented.
--The UI is optimized for desktop view; responsiveness can be added later.
+- This project is a prototype focused on frontend–backend integration.
+- Actual AI video generation is not implemented.
+- The UI is optimized for desktop view; responsiveness can be added later.
 
 ## Author
 Sunit Kumar Mallick
