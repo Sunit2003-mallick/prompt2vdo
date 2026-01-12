@@ -1,12 +1,11 @@
-# Prompt2Vdo
+## Prompt2Vdo
+-Prompt2Vdo is a simple **AI text to video prototype** that demonstrates how a frontend application can send structured video-generation requests to a backend service and display the response in real time.
 
-Prompt2Vdo is a simple **AI text to video prototype** that demonstrates how a frontend application can send structured video-generation requests to a backend service and display the response in real time.
-
-This project focuses on **end to end flow**, clean structure, and deployment readiness rather than actual AI video generation.
+-This project focuses on **end to end flow**, clean structure, and deployment readiness rather than actual AI video generation.
 
 ---
 
-# Features
+## Features
 - Text prompt input for video description
 - Style selection (Cinematic, Animation, Realistic)
 - Duration selection
@@ -16,76 +15,70 @@ This project focuses on **end to end flow**, clean structure, and deployment rea
 
 ---
 
-# Project Structure
+## Project Structure
 ```text
 prompt2vdo/
 ├── client/   # React frontend
 ├── server/   # Node.js + Express backend
 ├── README.md # Project documentation
+```
 
-# Tech Stack
+## Tech Stack
 
-Frontend
-
+### Frontend
 React (Create React App)
 JavaScript
 CSS
 
-Backend
-
+### Backend
 Node.js
 Express
 CORS
 dotenv
 
----
-
-Deployment
-
+## Deployment
 Frontend: Vercel
 Backend: Render
 
-1. Running the Project Locally
-i. Clone the repository
+## Running the Project Locally
+### 1. Clone the repository
+```bash
 git clone https://github.com/Sunit2003-mallick/prompt2vdo.git
 cd prompt2vdo
+```
 
-ii. Run the Backend
+### 2. Run the Backend
+```bash
 cd server
 npm install
 node index.js
-
+```
 Backend runs on:
 http://localhost:5000
 
-iii. Run the Frontend
+### 3. Run the Frontend
+```bash
 cd client
 npm install
 npm start
-
+```
 Frontend runs on:
 http://localhost:3000
 
-2. Live Deployment
-
+## Live Deployment
 Frontend (Vercel):
 https://prompt2vdo.vercel.app
-
 Backend (Render):
 https://prompt2vdo-backend.onrender.com
 
-Notes:
-
+## Notes
 -This project is a prototype focused on frontend–backend integration.
-
 -Actual AI video generation is not implemented.
-
 -The UI is optimized for desktop view; responsiveness can be added later.
 
-Author:
-
+## Author
 Sunit Kumar Mallick
 GitHub: https://github.com/Sunit2003-mallick
 
-License:
+## License
 This project is for learning and evaluation purposes.
