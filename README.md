@@ -71,7 +71,7 @@ Frontend runs on: http://localhost:3000
 
 ## Author
 **Sunit Kumar Mallick**
-- GitHub: https://github.com/Sunit2003-mallick
+GitHub: https://github.com/Sunit2003-mallick
 
 ## License
 This project is for learning and evaluation purposes.
