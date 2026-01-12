@@ -70,7 +70,7 @@ Frontend runs on: http://localhost:3000
 - The UI is optimized for desktop view; responsiveness can be added later.
 
 ## Author
-**Sunit Kumar Mallick**
+**Sunit Kumar Mallick**  
 GitHub: https://github.com/Sunit2003-mallick
 
 ## License
