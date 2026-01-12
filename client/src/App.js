@@ -18,7 +18,9 @@ function App() {
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
   try {
-    const response = await fetch("http://localhost:5000/generate-video", {
+    const response = await fetch(
+      "https://prompt2vdo-backend.onrender.com/generate-video",
+      {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
