@@ -1,7 +1,7 @@
 ## Prompt2Vdo
-- Prompt2Vdo is a simple **AI text to video prototype** that demonstrates how a frontend application can send structured video-generation requests to a backend service and display the response in real time.
+Prompt2Vdo is a simple **AI text to video prototype** that demonstrates how a frontend application can send structured video-generation requests to a backend service and display the response in real time.
 
-- This project focuses on **end to end flow**, clean structure, and deployment readiness rather than actual AI video generation.
+This project focuses on end to end flow, clean structure, and deployment readiness rather than actual AI video generation.
 
 ## Features
 - Text prompt input for video description
@@ -38,8 +38,8 @@ prompt2vdo/
 
 ## Running the Project Locally
 ### 1. Clone the repository
-git clone https://github.com/Sunit2003-mallick/prompt2vdo.git
 ```bash
+git clone https://github.com/Sunit2003-mallick/prompt2vdo.git
 cd prompt2vdo
 ```
 
@@ -49,8 +49,8 @@ cd server
 npm install
 node index.js
 ```
-Backend runs on:
-http://localhost:5000
+Backend runs on: http://localhost:5000
+
 
 ### 3. Run the Frontend
 ```bash
@@ -58,14 +58,11 @@ cd client
 npm install
 npm start
 ```
-Frontend runs on:
-http://localhost:3000
+Frontend runs on: http://localhost:3000
 
 ## Live Deployment
-- Frontend (Vercel):
-https://prompt2vdo.vercel.app
-- Backend (Render):
-https://prompt2vdo-backend.onrender.com
+- Frontend (Vercel): https://prompt2vdo.vercel.app
+- Backend (Render): https://prompt2vdo-backend.onrender.com
 
 ## Notes
 - This project is a prototype focused on frontend–backend integration.
