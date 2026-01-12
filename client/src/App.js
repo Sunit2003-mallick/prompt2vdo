@@ -19,7 +19,7 @@ function App() {
 
   try {
     const response = await fetch(
-      "https://prompt2vdo-backend.onrender.com/generate-video",
+      `${process.env.REACT_APP_API_URL}/generate-video`,
       {
       method: "POST",
       headers: {
