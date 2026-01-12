@@ -23,7 +23,7 @@ prompt2vdo/
 ├── server/   # Node.js + Express backend
 ├── README.md # Project documentation
 
-Tech Stack
+# Tech Stack
 
 Frontend
 
@@ -37,6 +37,8 @@ Node.js
 Express
 CORS
 dotenv
+
+---
 
 Deployment
 
