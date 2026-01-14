@@ -68,6 +68,8 @@ Frontend runs on: http://localhost:3000
 - This project is a prototype focused on frontend–backend integration.
 - Actual AI video generation is not implemented.
 - The UI is optimized for desktop view; responsiveness can be added later.
+- The frontend automatically switches between local and production backend URLs based on the environment.
+
 
 ## Author
 **Sunit Kumar Mallick**  
