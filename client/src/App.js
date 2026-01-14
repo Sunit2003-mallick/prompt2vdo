@@ -2,24 +2,32 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+  
+const API_URL =
+    process.env.NODE_ENV === "production"
+      ? "https://prompt2vdo-backend.onrender.com"
+      : "http://localhost:5000";
+
   const [prompt, setPrompt] = useState("");
   const [style, setStyle] = useState("cinematic");
   const [duration, setDuration] = useState(5);
   const [responseData, setResponseData] = useState(null);
   const [loading, setLoading] = useState(false);
 
+
   const handleGenerate = async () => {
   if (!prompt.trim()) {
     alert("Please enter a prompt");
     return;
   }
+
   setLoading(true);
   setResponseData(null);
   await new Promise((resolve) => setTimeout(resolve, 2000));
 
   try {
     const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/generate-video`,
+      `${API_URL}/generate-video`,
       {
       method: "POST",
       headers: {
@@ -33,8 +41,8 @@ function App() {
     });
 
     if (!response.ok) {
-        throw new Error("Backend error");
-      }
+      throw new Error("Backend error");
+    }
 
     const data = await response.json();
     setResponseData(data);
@@ -96,8 +104,8 @@ function App() {
         )}
         {responseData && (
           <div className="output">
-            <h3>Generated Video</h3>
-            <pre>{JSON.stringify(responseData, null, 2)}</pre>
+          <h3>Backend Response</h3>
+          <pre>{JSON.stringify(responseData, null, 2)}</pre>
           </div>
         )}
       </div>
