@@ -8,22 +8,32 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("Prompt2Vid backend running");
+  res.send("Prompt2Vdo backend running");
 });
 
-app.post("/generate-video", (req, res) => {
-  console.log("Received request at /generate-video");
-  console.log("Request body:", req.body);
-  const { prompt, style, duration } = req.body;
+app.post("/generate-video", async (req, res) => {
+  try {
+    const { prompt, style, duration } = req.body;
 
-  if (!prompt) {
-    return res.status(400).json({ error: "Prompt is required" });
+    console.log("Request received:", { prompt, style, duration });
+
+    res.json({
+      success: true,
+      message: "Video generation request received",
+      data: {
+        prompt,
+        style,
+        duration
+      }
+    });
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      success: false,
+      message: "Backend error"
+    });
   }
-
-  res.json({
-    message: "Video generation request received",
-    data: { prompt, style, duration },
-  });
 });
 
 const PORT = process.env.PORT || 5000;
